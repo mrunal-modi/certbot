@@ -1,0 +1,24 @@
+# Dockerfile
+
+# Use the official Nginx image as the base image
+FROM nginx:alpine
+
+# Copy the index.html file to the default Nginx HTML directory
+COPY index.html /usr/share/nginx/html
+
+# Expose ports 80 and 443
+EXPOSE 80
+EXPOSE 443
+
+# Create SSL directory
+RUN mkdir -p /etc/nginx/ssl
+
+# Copy SSL certificates from the host to the container
+# COPY letsencrypt/archive/fiscaltimeline.com/fullchain1.pem /etc/nginx/ssl/fullchain.pem
+# COPY letsencrypt/archive/fiscaltimeline.com/privkey1.pem /etc/nginx/ssl/privkey.pem
+
+# Set correct permissions
+# RUN chmod 644 /etc/nginx/ssl/fullchain.pem /etc/nginx/ssl/privkey.pem
+
+# Command to start Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]

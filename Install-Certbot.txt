@@ -1,0 +1,19 @@
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+# Build the Docker image
+make build
+
+# Run the Docker container (HTTP and HTTPS)
+make run
+
+# Obtain or renew SSL certificate using Certbot
+make certbot
+sudo chown -R $USER:$USER letsencrypt
+
+# Update Nginx container with SSL certificate
+make update-nginx-ssl
+
+# Run the Docker container with SSL support (HTTPS)
+make run-ssl
+
