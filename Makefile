@@ -1,13 +1,14 @@
 # Set the name of the Docker image
-IMAGE_NAME = static-website
+IMAGE_NAME=static-website
+
 
 # Set environment variable 
 NGINX_CONTAINER_NAME=my-static-website-container # the name of the Nginx container
 HOST_LETSENCRYPT_DIR=./letsencrypt # Set the relative directory on the host for Certbot
 
-DOMAIN = fiscaltimeline.com # Set your domain for Certbot
-CERT_PATH = /etc/letsencrypt/live/$(DOMAIN)/fullchain.pem
-KEY_PATH = /etc/letsencrypt/live/$(DOMAIN)/privkey.pem
+DOMAIN=fiscaltimeline.com # Set your domain for Certbot
+CERT_PATH=/etc/letsencrypt/live/$(DOMAIN)/fullchain.pem
+KEY_PATH=/etc/letsencrypt/live/$(DOMAIN)/privkey.pem
 
 # Target to display environment variable values
 show-env:
@@ -36,7 +37,7 @@ run:
 	docker run -d -p 80:80 --name my-static-website-container \
 		-v "$(HOST_LETSENCRYPT_DIR):/etc/letsencrypt" \
 		-v "$(HOST_LETSENCRYPT_DIR):/var/lib/letsencrypt" \
-		-e "DOMAIN=fiscaltimeline.com" \
+		-e "DOMAIN=$(DOMAIN)" \
 		$(IMAGE_NAME)
 
 # Target to run the Docker container with SSL support
