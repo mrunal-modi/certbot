@@ -1,5 +1,6 @@
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
+chmod +x entrypoint.sh
 
 # Build the Docker image
 make build
