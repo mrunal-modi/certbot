@@ -1,7 +1,7 @@
 # Certbot for Auto-Renewal of HTTPS Certificates
 
 <details>
-<summary>Install Docker on Ubuntu</summary>
+<summary>Install Docker and Make on Ubuntu</summary>
 
   ```bash
   sudo apt-get update
@@ -10,10 +10,6 @@
   sudo systemctl enable docker
   sudo usermod -a -G docker $(whoami)
   newgrp docker
-</details>
-<details>
-<summary>Install Make on Ubuntu</summary>
-  ```bash
   sudo apt-get install make
   ```
 </details>
