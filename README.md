@@ -1,34 +1,85 @@
-# Certbot for auto-renewal of HTTPS certificates
+# Certbot for Auto-Renewal of HTTPS Certificates
+
+## Prerequisites
 
 <details>
-<summary> Install Docker on Ubuntu </summary>
-```
-sudo apt-get update
+<summary>Install Docker on Ubuntu</summary>
+
+- Update package index:
+  ```bash
+  sudo apt-get update
+Install Docker:
+
+bash
+Copy code
 sudo apt-get install docker.io -y
+Start Docker service:
+
+bash
+Copy code
 sudo systemctl start docker
+Enable Docker on system startup:
+
+bash
+Copy code
 sudo systemctl enable docker
+Add the current user to the docker group:
+
+bash
+Copy code
 sudo usermod -a -G docker $(whoami)
+Activate the changes to groups:
+
+bash
+Copy code
 newgrp docker
-```
 </details>
-
 <details>
-<summary> Install Make on Ubuntu </summary>
-```
+<summary>Install Make on Ubuntu</summary>
+Install Make:
+bash
+Copy code
 sudo apt-get install make
-```
 </details>
-
+Usage
 <details>
-<summary> Clone Repo and change your Domain </summary>
-```
+<summary>Clone Repo and Change Your Domain</summary>
+Clone the repository:
+
+bash
+Copy code
 git clone https://github.com/mrunal-modi/certbot.git
-	@echo "Available steps:"
-	@echo "  1. make build          - Build the Docker image"
-	@echo "  2. make run            - Run the Docker container"
-	@echo "  3. make stop           - Stop and remove the Docker container"
-	@echo "  4. make clean          - Clean up the Docker image"
-	@echo "  5. make certbot        - Obtain or renew SSL certificate using Certbot"
-	@echo "  6. make update-nginx-ssl - Update Nginx container with SSL certificate"
-```
+Available steps:
+
+Build the Docker image:
+
+bash
+Copy code
+make build
+Run the Docker container:
+
+bash
+Copy code
+make run
+Stop and remove the Docker container:
+
+bash
+Copy code
+make stop
+Clean up the Docker image:
+
+bash
+Copy code
+make clean
+Obtain or renew SSL certificate using Certbot:
+
+bash
+Copy code
+make certbot
+Update Nginx container with SSL certificate:
+
+bash
+Copy code
+make update-nginx-ssl
 </details>
+```
