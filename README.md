@@ -2,6 +2,7 @@
 
 <details>
 <summary>Install Docker on Ubuntu</summary>
+
   ```bash
   sudo apt-get update
   sudo apt-get install docker.io -y
@@ -19,6 +20,7 @@
 
 <details>
 <summary>Clone Repo and Change Your Domain</summary>
+
   ```bash
   git clone https://github.com/mrunal-modi/certbot.git
   make build
