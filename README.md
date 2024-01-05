@@ -29,5 +29,13 @@
 </details>
 
 
+<details>
+<summary>Setup Cron job</summary>
+To set up a cron job for Certbot to automatically renew SSL certificates, you can add the following line to your crontab file. You can edit the crontab file by running the command crontab -e in your terminal.
+
+  ```bash
+    0 0 * * * cd /path/to/your/project && make update-nginx-ssl
+  ```
+</details>
 
 
